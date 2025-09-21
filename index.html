@@ -2,57 +2,180 @@
 <html lang="bn">
 <head>
   <meta charset="utf-8" />
-  <title>Sorry Afia</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Afia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bangla:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root{
+      --accent1: #1e3c72; /* deep blue */
+      --accent2: #2a5298; /* royal blue */
+      --white: #ffffff;
+      --card: rgba(255,255,255,0.9);
+      --muted: #5b6b7a;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Noto Sans Bangla', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;color:#0b2545}
     body{
-      margin:0;
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: linear-gradient(135deg, #1e3c72, #2a5298, #ffffff);
-      /* background-color: rgba(27, 27, 170, 0.726); */
-      font-family:sans-serif;
+      background: linear-gradient(135deg,var(--accent1), var(--accent2) 60%, var(--white));
+      background-size: 200% 200%;
+      animation: bgAnim 12s ease infinite;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    .card{
-      background:#fff;
-      padding:30px;
-      border-radius:16px;
-      box-shadow:0 8px 25px rgba(0,0,0,0.15);
-      text-align:center;
-      max-width:500px;
-      animation: fadein 2s ease;
+    @keyframes bgAnim{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
     }
-    h1{
-      color:#ff6b6b;
-      margin-bottom:10px;
+    .container{max-width:960px;margin:36px auto;padding:22px}
+    header{display:flex;align-items:center;gap:18px}
+    .logo{background:rgba(255,255,255,0.18);padding:10px 14px;border-radius:10px;color:var(--white);font-weight:700}
+    nav{margin-left:auto}
+    nav a{color:var(--white);text-decoration:none;margin-left:12px;font-weight:600}
+
+    .card{background:var(--card);border-radius:14px;padding:20px;margin-top:18px;box-shadow:0 12px 30px rgba(11,37,69,0.12)}
+    h1{margin:0;font-size:22px;color:var(--accent2)}
+    p.lead{margin:8px 0 14px;color:var(--muted);line-height:1.6}
+
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:center}
+    .typing-box{font-size:18px;line-height:1.6;color:#0b2545}
+    .short-msg{background:linear-gradient(90deg,#fff,#fff);padding:14px;border-radius:10px;border:1px solid rgba(11,37,69,0.04);text-align:center;font-weight:600}
+
+    .heart{display:flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:16px;background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,255,255,0.7));box-shadow:0 12px 30px rgba(11,37,69,0.08)}
+    .heart svg{width:84px;height:84px}
+
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:999px;border:0;cursor:pointer;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(11,37,69,0.06)}
+
+    .section{margin-top:18px}
+    .section h2{margin:0 0 8px 0;font-size:18px;color:var(--accent2)}
+    .section p{margin:0;color:var(--muted)}
+
+    .promise{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));padding:14px;border-radius:10px;margin-top:10px}
+
+    .timeline{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .timeline .item{padding:10px;border-radius:8px;border:1px dashed rgba(11,37,69,0.04);background:rgba(255,255,255,0.7)}
+
+    .gallery{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .gallery .img{width:120px;height:90px;border-radius:8px;background:linear-gradient(45deg,#f3f6ff,#fff);display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px solid rgba(11,37,69,0.04)}
+
+    footer{text-align:center;margin-top:18px;color:#12314a88;font-size:13px}
+
+    /* small devices */
+    @media(max-width:880px){
+      .hero{grid-template-columns:1fr}
+      nav{display:none}
     }
-    p{
-      color:#333;
-      line-height:1.6;
-    }
-    @keyframes fadein {
-      from{opacity:0; transform:translateY(20px);}
-      to{opacity:1; transform:translateY(0);}
-    }
-    .heart{
-      font-size:40px;
-      animation:pulse 1.5s infinite;
-    }
-    @keyframes pulse{
-      0%{transform:scale(1);}
-      50%{transform:scale(1.2);}
-      100%{transform:scale(1);}
-    }
+
+    /* tiny helpers */
+    .muted{color:var(--muted)}
+    .center{display:flex;align-items:center;justify-content:center}
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="heart">💗</div>
-    <h1>Sorry Afia</h1>
-    <p>
-      Afia, আমি সত্যিই sorry। আর রাগ করে থেকো না প্লিজ। আমি প্রতিশ্রুতি দিচ্ছি আর কখনো তোমাকে কষ্ট দেবো না।
-    </p>
+  <div class="container">
+    <header>
+      <div class="logo">Tanjim ❤️ Afia</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#apology">Apology</a>
+        <a href="#promise">Promise</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="card" id="home">
+      <div class="hero">
+        <div>
+          <h1>Afia, Juborani</h1>
+          <p class="lead">এই পেজটা আমি তোমার জন্য বানিয়েছি</p>
+
+          <div class="typing-box">
+            <div class="short-msg" id="shortMsg">Afia, আমি সত্যিই দুঃখিত। আর রাগ করে থেকো না প্লিজ। আমি প্রতিশ্রুতি দিচ্ছি আর কখনো তোমাকে কষ্ট দেবো না।</div>
+
+            <div class="muted" style="margin-top:10px">I love you 💙❤️</div>
+          </div>
+        </div>
+
+        <div class="center">
+          <div class="heart">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21s-7.5-5.3-9.2-8.2C0.9 9 4.1 5 8.5 6.6 10 7.3 11 9 12 10.2c1-1.2 2-2.9 3.5-3.6 4.4-1.6 7.6 2.4 5.7 6.2C19.5 15.7 12 21 12 21z" fill="#ff6b81"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="apology">
+        <h2>স্বীকারোক্তি</h2>
+        <p>আমি জানি আমি ভুল করেছি। আমি তোমাকে কষ্ট দিয়েছি—এটা আমি মেনে নিচ্ছি। আর কখনো তোমাকে কষ্ট দেবো না</p>
+
+        <div class="timeline">
+          <div class="item"><strong>আমি যা বুঝেছি —</strong> আমার অতিরিক্ত barabari আর রেগে ওঠা ভুল ছিল।</div>
+          <div class="item"><strong>আমি যা করব —</strong> Nijeke change kore feltesi</div>
+          <div class="item"><strong>আমি চাই —</strong> Shob thik kore nite, আমি বদলে যাবো।</div>
+        </div>
+      </div>
+
+      <div class="section" id="promise">
+        <h2>প্রতিশ্রুতি</h2>
+        <div class="promise">
+          <p>Promise kortesi ar kokhono erokom vul korbo na, tomake koshto dibo na</p>
+        </div>
+      </div>
+
+
+      <div class="section" id="contact">
+        <h2>যদি কথা বলতে চাও</h2>
+        <p class="muted">Asho kotha boli</p>
+
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn primary" id="meetBtn">কথা বলি</button>
+          <button class="btn ghost" id="noPressure">চাপ নেই — তুমি নির্ধারিত করো</button
+        </div>
+      </div>
+
+    </main>
   </div>
+
+  <script>
+    // Short message to copy
+    const shortMsg = "Afia, আমি সত্যিই দুঃখিত। আর রাগ করে থেকো না প্লিজ। আমি প্রতিশ্রুতি দিচ্ছি—আর কখনো তোমাকে কষ্ট দেবো না।";
+
+    const copyBtn = document.getElementById('copyBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const meetBtn = document.getElementById('meetBtn');
+    const noPressure = document.getElementById('noPressure');
+
+    copyBtn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(shortMsg);
+        copyBtn.textContent = 'কপি হয়েছে — এখন পেস্ট করে পাঠাও';
+        copyBtn.disabled = true;
+      }catch(e){
+        copyBtn.textContent = 'কপি failed — ম্যানুয়ালি কপি করো';
+      }
+    });
+
+    // Download a simple image of the card (screenshot-like)
+    downloadBtn.addEventListener('click', ()=>{
+      alert('আপনি পেজটি স্ক্রিনশট করে পাঠালে বেশি ভাল কাজ করবে। ব্রাউজারে সরাসরি পিকচার ডাউনলোড সব সময় সঠিক ভাবে না হতে পারে।');
+    });
+
+    meetBtn.addEventListener('click', ()=>{
+      alert('চেষ্টা করো—শান্তভাবে ওকে বলো: "আমি সময় দেব, আমি শুনবো" — জোর করা যাবে না।');
+    });
+    noPressure.addEventListener('click', ()=>{
+      alert('ঠিক আছে — তুমি সিদ্ধান্ত নাও, আমি অপেক্ষা করবো।');
+    });
+
+    // Prevent misuse hint
+    window.addEventListener('load', ()=>{
+      // minor check to ensure respectful use
+      console.log('Forgive page ready — be respectful, do not harass.');
+    });
+  </script>
 </body>
 </html>
